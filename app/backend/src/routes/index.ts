@@ -22,4 +22,8 @@ route.get(
   (req, res, next) => teamController.getAllTeams(req, res, next),
 );
 
+route.get(
+  '/teams/:id',
+  (req, res, next) => teamController.getTeamById(req, res, next),
+);
 export default route;
