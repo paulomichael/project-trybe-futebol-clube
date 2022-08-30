@@ -12,9 +12,9 @@ class LoginController {
       const { email, password } = req.body;
       // console.log('----> loginController.password:', password);
       const token = await this.loginService.signIn({ email, password });
-      // if (!token) {
-      //   return res.status(444).json({ message: 'Incorrect email or password' });
-      // }
+      if (!token) {
+        return res.status(401).json({ message: 'Incorrect email or password' });
+      }
       return res.status(200).json({ token });
     } catch (error) {
       next(error);

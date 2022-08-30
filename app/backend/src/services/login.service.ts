@@ -11,14 +11,14 @@ class LoginService {
 
   }
 
-  async signIn(payload: IUserLogin): Promise<string> {
+  async signIn(payload: IUserLogin): Promise<string | object> {
     // async signIn(payload: IUserLogin): Promise<string> {
     const user = await this.userModel.findOne({
       where: { email: payload.email },
     });
     if (!user) {
       // throw new Error('Incorrect email or password');
-      // return { message: 'Incorrect email or password' }
+      // return { message: 'Incorrect email or password' };
       return '';
     }
     const validation = validateLogin.validatePassword(payload.password, user.password);
