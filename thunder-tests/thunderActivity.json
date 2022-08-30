@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "79807e2a-ebb6-404b-821a-165540f767ee",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3001/login",
+    "url": "localhost:3001/login",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-08-29T22:28:41.896Z",
+    "modified": "2022-08-29T23:10:29.869Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\"email\": \"admin@admin.com\",\n\"password\": \"secret_admin\"\n} ",
+      "form": []
+    },
+    "tests": []
+  }
+]

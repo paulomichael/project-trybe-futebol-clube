@@ -4,13 +4,18 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3001/",
-    "url": "localhost:3001/",
-    "method": "GET",
+    "url": "localhost:3001/login",
+    "method": "POST",
     "sortNum": 0,
     "created": "2022-08-23T20:55:26.164Z",
-    "modified": "2022-08-23T20:55:26.312Z",
+    "modified": "2022-08-30T16:27:20.990Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n        \"email\": \"user@user.com\",\n        \"password\": \"secret_user\"\n      }",
+      "form": []
+    },
     "tests": []
   },
   {
