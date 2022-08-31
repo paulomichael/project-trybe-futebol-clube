@@ -8,7 +8,7 @@ class LoginController {
 
   signIn = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      console.log('----> loginController.req.body:', req.body);
+      // console.log('----> loginController.req.body:', req.body);
       const { email, password } = req.body;
       // console.log('----> loginController.password:', password);
       const token = await this.loginService.signIn({ email, password });

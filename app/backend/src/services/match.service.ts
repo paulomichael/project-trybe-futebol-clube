@@ -17,12 +17,13 @@ class MatchService {
   }
 
   async createMatch(matchRequest: object): Promise<object> {
+    // verifica se times tem o mesmo nome
+    console.log('==========> matchRequest:', matchRequest);
     const matchResponse = await this.matchModel.create({
       ...matchRequest,
       inProgress: true,
     });
     console.log('--------> match.service.getAllMatches().matchRequest: ', matchRequest);
-    // console.log('--------> match.service.getAllMatches().matchResponse: ', matchResponse);
     return matchResponse;
   }
 
