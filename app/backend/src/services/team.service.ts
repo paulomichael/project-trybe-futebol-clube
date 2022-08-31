@@ -12,7 +12,7 @@ class TeamService {
   // async getTeamById(teamId: number): Promise<object> {
   async getTeamById(teamId: number): Promise<any> {
     const team = await this.teamModel.findByPk(teamId);
-    console.log('---------> team.service.getTeamById.team: ', team);
+    // console.log('---------> team.service.getTeamById.team: ', team);
     return team;
   }
 }

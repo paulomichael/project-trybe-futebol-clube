@@ -17,7 +17,7 @@ Match.init({
   homeTeamGoals: INTEGER,
   awayTeam: INTEGER,
   awayTeamGoals: INTEGER,
-  inProgress: BOOLEAN
+  inProgress: BOOLEAN,
 }, {
   // ... Outras configs
   underscored: true,
@@ -27,7 +27,7 @@ Match.init({
 });
 
 /**
-  * `Workaround` para aplicar as associations em TS: 
+  * `Workaround` para aplicar as associations em TS:
   * Associations 1:N devem ficar em uma das instâncias de modelo
   * */
 
