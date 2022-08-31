@@ -21,9 +21,15 @@ class MatchService {
       ...matchRequest,
       inProgress: true,
     });
-    console.log('--------> match.service.getAllMatches().matchResponse: ', matchResponse);
+    console.log('--------> match.service.getAllMatches().matchRequest: ', matchRequest);
+    // console.log('--------> match.service.getAllMatches().matchResponse: ', matchResponse);
     return matchResponse;
   }
+
+  async finishMatch(matchId: number): Promise<void> {
+    await this.matchModel.update({ inProgress: false }, { where: { id: matchId } });
+  }
+
   // async getTeamById(teamId: number): Promise<object> {
   // async getTeamById(teamId: number): Promise<any> {
   //   const team = await this.matchModel.findByPk(teamId);

@@ -38,8 +38,12 @@ route.get(
 
 route.post(
   '/matches',
-  // validateLoginInput,
   (req, res, next) => matchController.createMatch(req, res, next),
+);
+
+route.patch(
+  '/matches/:id/finish',
+  (req, res, next) => matchController.finishMatch(req, res, next),
 );
 
 export default route;

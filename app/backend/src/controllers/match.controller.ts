@@ -23,6 +23,16 @@ class MatchController {
       next(error);
     }
   };
+
+  finishMatch = async (req: Request, res: Response, next: NextFunction): Promise <any> => {
+    try {
+      const { id: matchId } = req.params;
+      await this.matchService.finishMatch(Number(matchId));
+      return res.status(200).json({ message: 'Finished' });
+    } catch (error) {
+      next(error);
+    }
+  };
 }
 
 export default MatchController;
