@@ -35,4 +35,11 @@ route.get(
   '/matches',
   (req, res, next) => matchController.getAllMatches(req, res, next),
 );
+
+route.post(
+  '/matches',
+  // validateLoginInput,
+  (req, res, next) => matchController.createMatch(req, res, next),
+);
+
 export default route;

@@ -1,8 +1,8 @@
-import Match from '../database/models/match';
+import MatchModel from '../database/models/match';
 import TeamModel from '../database/models/team';
 
-class TeamService {
-  constructor(private matchModel = Match) {
+class MatchService {
+  constructor(private matchModel = MatchModel) {
   }
 
   async getAllMatches(): Promise<object> {
@@ -16,6 +16,14 @@ class TeamService {
     return allMatches;
   }
 
+  async createMatch(matchRequest: object): Promise<object> {
+    const matchResponse = await this.matchModel.create({
+      ...matchRequest,
+      inProgress: true,
+    });
+    console.log('--------> match.service.getAllMatches().matchResponse: ', matchResponse);
+    return matchResponse;
+  }
   // async getTeamById(teamId: number): Promise<object> {
   // async getTeamById(teamId: number): Promise<any> {
   //   const team = await this.matchModel.findByPk(teamId);
@@ -24,4 +32,4 @@ class TeamService {
   // }
 }
 
-export default TeamService;
+export default MatchService;
