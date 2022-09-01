@@ -22,7 +22,11 @@ class MatchController {
           .status(401)
           .json({ message: 'It is not possible to create a match with two equal teams' });
       }
-      const matchResponse = await this.matchService.createMatch(matchRequest);
+      const matchResponse: any = await this.matchService.createMatch(matchRequest);
+      if (matchResponse.message) {
+        return res.status(404).json({ message: matchResponse.message });
+        // return res.status(404).json({ message: 'There is no team with such id!' });
+      }
       return res.status(201).json(matchResponse);
     } catch (error) {
       next(error);

@@ -20,7 +20,7 @@ class createToken {
       return { message: 'No token for you, GoodBye!' };
     }
     const token = jwt.verify(payload, JWT_SECRET);
-    console.log('----------> jwt.service.verify().token: ', token);
+    // console.log('----------> jwt.service.verify().token: ', token);
     return token;
   }
 }

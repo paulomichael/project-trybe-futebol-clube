@@ -16,14 +16,26 @@ class MatchService {
     return allMatches;
   }
 
-  async createMatch(matchRequest: object): Promise<object> {
-    // verifica se times tem o mesmo nome
-    console.log('==========> matchRequest:', matchRequest);
+  // async createMatch(matchRequest: object | any): Promise<object> {
+  async createMatch(matchRequest: any): Promise<object> {
+    // verifica se nomes existem
+    const { homeTeam, awayTeam } = matchRequest;
+    // console.log('-----> matchRequest: ', matchRequest);
+    const homeTeamExist = await this.matchModel.findOne({
+      where: { id: homeTeam },
+    });
+    const awayTeamExist = await this.matchModel.findOne({
+      where: { id: awayTeam },
+    });
+
+    if (!homeTeamExist || !awayTeamExist) {
+      return { message: 'There is no team with such id!' };
+    }
+
     const matchResponse = await this.matchModel.create({
       ...matchRequest,
       inProgress: true,
     });
-    console.log('--------> match.service.getAllMatches().matchRequest: ', matchRequest);
     return matchResponse;
   }
 

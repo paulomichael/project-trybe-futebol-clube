@@ -21,8 +21,8 @@ class LoginService {
       // return { message: 'Incorrect email or password' };
       return '';
     }
-    const validation = validateLogin.validatePassword(payload.password, user.password);
-    console.log('-------> loginService.validation: ', validation);
+    validateLogin.validatePassword(payload.password, user.password);
+    // console.log('-------> loginService.validation: ', validation);
     // if (!validation || validation.message) {
     //   return 'Validation ERROR';
     // }
