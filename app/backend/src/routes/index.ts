@@ -48,4 +48,9 @@ route.patch(
   (req, res, next) => matchController.finishMatch(req, res, next),
 );
 
+route.patch(
+  '/matches/:id',
+  (req, res, next) => matchController.updateMatch(req, res, next),
+);
+
 export default route;

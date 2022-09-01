@@ -43,12 +43,12 @@ class MatchService {
     await this.matchModel.update({ inProgress: false }, { where: { id: matchId } });
   }
 
-  // async getTeamById(teamId: number): Promise<object> {
-  // async getTeamById(teamId: number): Promise<any> {
-  //   const team = await this.matchModel.findByPk(teamId);
-  //   console.log('---------> team.service.getTeamById.team: ', team);
-  //   return team;
-  // }
+  async updateMatch(matchId: number, matchResult: any): Promise<void> {
+    await this.matchModel.update({
+      homeTeamGoals: matchResult.homeTeamGoals,
+      awayTeamGoals: matchResult.awayTeamGoals,
+    }, { where: { id: matchId } });
+  }
 }
 
 export default MatchService;
