@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import validateLoginInput from '../middlewares/login.middleware';
+import validateToken from '../middlewares/token.middleware';
 import LoginController from '../controllers/login.controller';
 import loginValidationMiddleware from '../middlewares/login.validation.middleware';
 import TeamController from '../controllers/team.controller';
@@ -38,6 +39,7 @@ route.get(
 
 route.post(
   '/matches',
+  validateToken,
   (req, res, next) => matchController.createMatch(req, res, next),
 );
 
