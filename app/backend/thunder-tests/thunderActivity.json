@@ -4,16 +4,16 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3001/",
-    "url": "localhost:3001/login",
+    "url": "localhost:3001/",
     "method": "POST",
     "sortNum": 0,
     "created": "2022-08-23T20:55:26.164Z",
-    "modified": "2022-08-31T21:56:54.147Z",
+    "modified": "2022-09-11T22:47:17.126Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n        \"email\": \"user@user.com\",\n        \"password\": \"secret_user\"\n      }",
+      "raw": "{\n\"email\": \"user@user.com\",\n \"password\": \"secret_user\"\n}",
       "form": []
     },
     "tests": []
@@ -41,7 +41,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-08-23T20:55:42.991Z",
-    "modified": "2022-08-23T22:00:54.409Z",
+    "modified": "2022-09-11T22:47:22.645Z",
     "headers": [],
     "params": [
       {
@@ -76,6 +76,20 @@
         "isPath": false
       }
     ],
+    "tests": []
+  },
+  {
+    "_id": "1d09e444-847c-4098-bca6-d1f49436c45d",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3001/leaderboard/home",
+    "url": "localhost:3001/leaderboard/home",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-09-11T22:43:23.462Z",
+    "modified": "2022-09-13T13:32:02.184Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]

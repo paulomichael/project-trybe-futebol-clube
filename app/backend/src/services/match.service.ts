@@ -5,15 +5,23 @@ class MatchService {
   constructor(private matchModel = MatchModel) {
   }
 
-  async getAllMatches(): Promise<object> {
+  async getAllMatches(): Promise<MatchModel[]> {
     const allMatches = await this.matchModel.findAll({
+      // adicionar inProgress pra filtrar
       include: [
         { model: TeamModel, as: 'teamHome', attributes: ['teamName'] },
         { model: TeamModel, as: 'teamAway', attributes: ['teamName'] },
       ],
     });
-    console.log('--------> match.service.getAllMatches().allMatches: ', allMatches);
+    // console.log('--------> match.service.getAllMatches().allMatches: ', allMatches);
     return allMatches;
+  }
+
+  async getAllFinishedMatches(): Promise<MatchModel[]> {
+    const allFinishedMatches = await this.matchModel.findAll({
+      where: { inProgress: false },
+    });
+    return allFinishedMatches as MatchModel[];
   }
 
   // async createMatch(matchRequest: object | any): Promise<object> {

@@ -4,7 +4,7 @@ class TeamService {
   constructor(private teamModel = Team) {
   }
 
-  async getAllTeams(): Promise<object> {
+  async getAllTeams(): Promise<Team[]> {
     const allTeams = await this.teamModel.findAll();
     return allTeams;
   }

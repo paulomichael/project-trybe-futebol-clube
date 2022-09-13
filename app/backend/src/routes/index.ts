@@ -5,11 +5,13 @@ import LoginController from '../controllers/login.controller';
 import loginValidationMiddleware from '../middlewares/login.validation.middleware';
 import TeamController from '../controllers/team.controller';
 import MatchController from '../controllers/match.controller';
+import LeaderBoardHomeController from '../controllers/leaderBoardHome.controller';
 
 const route = Router();
 const loginController = new LoginController();
 const teamController = new TeamController();
 const matchController = new MatchController();
+const leaderBoardHomeController = new LeaderBoardHomeController();
 
 route.post(
   '/login',
@@ -51,6 +53,11 @@ route.patch(
 route.patch(
   '/matches/:id',
   (req, res, next) => matchController.updateMatch(req, res, next),
+);
+
+route.get(
+  '/leaderboard/home',
+  (req, res, next) => leaderBoardHomeController.getLeaderBoardHome(req, res, next),
 );
 
 export default route;
