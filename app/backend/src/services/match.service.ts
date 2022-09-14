@@ -21,6 +21,7 @@ class MatchService {
     const allFinishedMatches = await this.matchModel.findAll({
       where: { inProgress: false },
     });
+    // console.log('-------> allFinishedMatches: ', allFinishedMatches);
     return allFinishedMatches as MatchModel[];
   }
 

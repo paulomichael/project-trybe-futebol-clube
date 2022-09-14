@@ -6,12 +6,14 @@ import loginValidationMiddleware from '../middlewares/login.validation.middlewar
 import TeamController from '../controllers/team.controller';
 import MatchController from '../controllers/match.controller';
 import LeaderBoardHomeController from '../controllers/leaderBoardHome.controller';
+import LeaderBoardAwayController from '../controllers/leaderBoardAway.controller';
 
 const route = Router();
 const loginController = new LoginController();
 const teamController = new TeamController();
 const matchController = new MatchController();
 const leaderBoardHomeController = new LeaderBoardHomeController();
+const leaderBoardAwayController = new LeaderBoardAwayController();
 
 route.post(
   '/login',
@@ -58,6 +60,11 @@ route.patch(
 route.get(
   '/leaderboard/home',
   (req, res, next) => leaderBoardHomeController.getLeaderBoardHome(req, res, next),
+);
+
+route.get(
+  '/leaderboard/away',
+  (req, res, next) => leaderBoardAwayController.getLeaderBoardAway(req, res, next),
 );
 
 export default route;
