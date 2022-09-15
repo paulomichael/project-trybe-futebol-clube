@@ -97,11 +97,11 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3001/leaderboard/away",
-    "url": "localhost:3001/leaderboard/away",
+    "url": "localhost:3001/teams",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-09-13T18:29:28.451Z",
-    "modified": "2022-09-14T01:17:29.700Z",
+    "modified": "2022-09-14T15:15:36.493Z",
     "headers": [],
     "params": [],
     "tests": []

@@ -3,6 +3,10 @@ import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 import { app } from '../app';
 import { Response } from 'superagent';
+import IUserLogin from '../interfaces/IUserLogin';
+import User from '../database/models/user'
+import * as  sinon from 'sinon';
+
 
 chai.use(chaiHttp);
 
@@ -16,6 +20,18 @@ describe('Users e Login', () => {
     email: 'user@user.com',
     password: 'secret_user'
   }
+
+  before(async () => {
+    sinon
+      .stub(User, "findOne")
+      .resolves(signInMock as User);
+  });
+
+  after(()=>{
+    (User.findOne as sinon.SinonStub).restore();
+  })
+
+
 
     it('POST /login', 
     async () => {
