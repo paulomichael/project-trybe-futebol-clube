@@ -105,5 +105,19 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "3a85c654-e252-42b8-99a8-83d247b59c11",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3001/teams/1",
+    "url": "localhost:3001/teams/1",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-09-15T23:20:09.730Z",
+    "modified": "2022-09-15T23:20:10.415Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]
