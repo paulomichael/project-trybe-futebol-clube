@@ -49,7 +49,7 @@ describe('gets all teams', () => {
 
       response = await chai.request(app)
       .get('/teams')
-      console.log('-------> response:', response)
+      // console.log('-------> response:', response)
       expect(response).to.have.status(200);
       expect(response.body[0]).to.have.property('id');
     });
@@ -83,8 +83,8 @@ describe('get teams by id', () => {
 
       response = await chai.request(app)
       .get('/teams/1')
-      console.log('-------> response:', response)
+      // console.log('-------> response:', response)
       expect(response).to.have.status(200);
-      expect(response.body[0]).to.have.property('id');
+      expect(response.body).to.have.property('id');
     });
 });

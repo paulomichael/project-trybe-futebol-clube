@@ -2,7 +2,7 @@ import MatchModel from '../database/models/match';
 import TeamModel from '../database/models/team';
 
 class MatchService {
-  constructor(private matchModel = MatchModel) {
+  constructor(private matchModel = MatchModel, private teamModel = TeamModel) {
   }
 
   async getAllMatches(): Promise<MatchModel[]> {
@@ -25,18 +25,16 @@ class MatchService {
     return allFinishedMatches as MatchModel[];
   }
 
-  // async createMatch(matchRequest: object | any): Promise<object> {
   async createMatch(matchRequest: any): Promise<object> {
     // verifica se nomes existem
+
     const { homeTeam, awayTeam } = matchRequest;
-    // console.log('-----> matchRequest: ', matchRequest);
-    const homeTeamExist = await this.matchModel.findOne({
+    const homeTeamExist = await this.teamModel.findOne({
       where: { id: homeTeam },
     });
-    const awayTeamExist = await this.matchModel.findOne({
+    const awayTeamExist = await this.teamModel.findOne({
       where: { id: awayTeam },
     });
-
     if (!homeTeamExist || !awayTeamExist) {
       return { message: 'There is no team with such id!' };
     }

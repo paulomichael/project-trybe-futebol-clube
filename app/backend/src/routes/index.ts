@@ -7,6 +7,7 @@ import TeamController from '../controllers/team.controller';
 import MatchController from '../controllers/match.controller';
 import LeaderBoardHomeController from '../controllers/leaderBoardHome.controller';
 import LeaderBoardAwayController from '../controllers/leaderBoardAway.controller';
+// import LeaderBoardController from '../controllers/leaderBoard.controller';
 
 const route = Router();
 const loginController = new LoginController();
@@ -14,6 +15,7 @@ const teamController = new TeamController();
 const matchController = new MatchController();
 const leaderBoardHomeController = new LeaderBoardHomeController();
 const leaderBoardAwayController = new LeaderBoardAwayController();
+// const leaderBoardController = new LeaderBoardController();
 
 route.post(
   '/login',
@@ -66,5 +68,10 @@ route.get(
   '/leaderboard/away',
   (req, res, next) => leaderBoardAwayController.getLeaderBoardAway(req, res, next),
 );
+
+// route.get(
+//   '/leaderboard',
+//   (req, res, next) => leaderBoardController.getLeaderBoard(req, res, next),
+// );
 
 export default route;

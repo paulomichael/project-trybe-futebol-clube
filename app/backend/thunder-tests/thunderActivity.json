@@ -41,7 +41,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-08-23T20:55:42.991Z",
-    "modified": "2022-09-11T22:47:22.645Z",
+    "modified": "2022-09-19T13:46:18.020Z",
     "headers": [],
     "params": [
       {
@@ -53,7 +53,7 @@
     ],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"asdf@asdf.com\",\n  \"password\": \"aasdfasdf\"\n}",
+      "raw": "{\n  \"email\": \"admin@admin.com\",\n  \"password\": \"secret_admin\"\n}",
       "form": []
     },
     "tests": []
@@ -83,11 +83,11 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3001/leaderboard/home",
-    "url": "localhost:3001/leaderboard/away",
+    "url": "localhost:3001/leaderboard/home",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-09-11T22:43:23.462Z",
-    "modified": "2022-09-14T02:29:52.463Z",
+    "modified": "2022-09-16T19:21:39.079Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -118,6 +118,58 @@
     "modified": "2022-09-15T23:20:10.415Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "bf4ef655-8fd6-4f6a-a012-320394f08954",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3001/matches",
+    "url": "localhost:3001/matches",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-09-16T18:56:20.708Z",
+    "modified": "2022-09-16T18:58:21.422Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a0058b49-3da0-4b3a-9b51-581af69eb4c5",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3001/leaderboard",
+    "url": "localhost:3001/leaderboard",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-09-16T22:12:08.536Z",
+    "modified": "2022-09-17T16:31:32.032Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "e449cce0-e876-4cbe-bda4-6fdbb1949f72",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3001/matches",
+    "url": "localhost:3001/matches",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-09-19T14:52:28.107Z",
+    "modified": "2022-09-19T15:03:29.029Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInBhc3N3b3JkIjoiJDJhJDA4JHhpLkh4azFjekFPMG5aUi4uQjM5M3UxMGFFRDBSUTFOM1BBRVhRN0h4dExqS1BFWkJ1LlBXIiwiaWQiOjF9LCJpYXQiOjE2NjM1OTUxNzgsImV4cCI6MTY5NTEzMTE3OH0.F8U25-nwlBOwH_3-dJqCujrNFnXjGOD5XtOVSONwVmQ"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"homeTeam\": \"9999\",\n    \"awayTeam\": \"8\",\n    \"homeTeamGoals\": \"2\",\n    \"awayTeamGoals\": \"2\"\n  }",
+      "form": []
+    },
     "tests": []
   }
 ]
